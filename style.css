@@ -1,0 +1,89 @@
+
+/* // <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900 */
+
+
+
+/* .outer {
+    
+
+} */
+  @font-face {
+    font-family: Outfit;
+    src: url('assets\fonts\outfit');
+  }
+
+  .attribution{
+    align-items: center;
+    justify-content: center;
+  }
+
+body{
+  margin-left: 2em;
+  margin-top: 3em;
+  margin-right: 2em;
+  margin-bottom: 3em;
+  background-color:hsl(212, 45%, 89%);
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.contentcontainer {
+  margin: auto ;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  display: flex;
+  width: 100%;
+  text-align: center;
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/*   
+.outer {
+  position: relative;
+}
+.inner {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  Other inner div styles here 
+} */
+
+
+.content {
+    display: table-cell;
+    font-family: 'outfit';
+    margin: auto;
+    justify-content: center;
+    padding-left: auto;
+    padding-right: auto;
+  }
+
+  /* #qrcode{
+    border-radius: 25px;
+    max-width: 100%;
+    height: auto;
+  } */
+
+img{
+  width: 100%;
+  border-radius: 15px;
+}
+
+#textheader{
+  font-weight: 800;
+  color: hsl(218, 44%, 22%);
+}
+
+.content p{
+  font-size: 15px;
+  color: hsl(220, 15%, 55%);
+  font-family: outfit, sans-serif;
+    
+}
