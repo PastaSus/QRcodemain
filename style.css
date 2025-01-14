@@ -1,90 +1,113 @@
+/* 
 
-/* // <uniquifier>: Use a unique and descriptive class name
-// <weight>: Use a value from 100 to 900 */
+01 typography system(px)::after
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- font-weights
+default: 400
+medium_500
+semi-bold_600
+bold_700
+
+- Line heights
+Default: 1
+small:1.05
+medium:1.2
+paragraph defalt: 1.6
+large: 1.8
+
+-Letter spacing
+-0.5px
+0.75px
+
+spacing system(px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 /48 / 64 / 80 / 96 / 128
+
+02 colors
+
+primary: #e67e22
+Tints:
+#fdf2e9
+#fae5d3
 
 
+Shades: 
 
-/* .outer {
-    
 
-} */
-  @font-face {
-    font-family: Outfit;
-    src: url('assets\fonts\outfit');
-  }
+Accents
 
-  .attribution{
-    align-items: center;
-    justify-content: center;
-  }
+Greys:
+#333
+#555
+#888
+#767676 (ligtest gray allowed on #fff)
+#6f6f6f (lightest gray alllowed)
 
-body{
-  margin-left: 2em;
-  margin-top: 3em;
-  margin-right: 2em;
-  margin-bottom: 3em;
-  background-color:hsl(212, 45%, 89%);
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  border-radius: 15px;
+05 shadows
+box-shadow: 0 2.4px 4.8rem rgba(0, 0, 0, 0.075);
+
+06 border-radius
+default:9px
+medium: 11px
+
+07 whitespace
+*/
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --background: hsl(212, 45%, 89%);
+  --paragraph: hsl(220, 15%, 55%);
+  --dark-blue: hsl(218, 44%, 22%);
 }
 
-.contentcontainer {
-  margin: auto ;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: Outfit;
+  background-color: var(--background);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 120rem;
+  height: 100vh;
   display: flex;
-  width: 100%;
-  text-align: center;
-  background-color: white;
-  padding: 15px;
-  border-radius: 10px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  align-items: center;
+  justify-content: center;
+  /* transform: translateY(50%); */
+  /* padding: 1.6rem; */
 }
-/*   
-.outer {
-  position: relative;
-}
-.inner {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  Other inner div styles here 
-} */
-
 
 .content {
-    display: table-cell;
-    font-family: 'outfit';
-    margin: auto;
-    justify-content: center;
-    padding-left: auto;
-    padding-right: auto;
-  }
-
-  /* #qrcode{
-    border-radius: 25px;
-    max-width: 100%;
-    height: auto;
-  } */
-
-img{
-  width: 100%;
-  border-radius: 15px;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  text-align: center;
+  background-color: var(--white);
+  padding: 1.6rem;
+  border-radius: 17px;
 }
 
-#textheader{
-  font-weight: 800;
-  color: hsl(218, 44%, 22%);
+.main-heading {
+  color: var(--dark-blue);
+  margin-bottom: 1.6rem;
+  font-weight: 700;
 }
 
-.content p{
-  font-size: 15px;
-  color: hsl(220, 15%, 55%);
-  font-family: outfit, sans-serif;
-    
+.qrcode {
+  max-width: 27rem;
+  margin-bottom: 1.6rem;
+  border-radius: 11px;
+}
+
+.text {
+  font-size: 1.5rem;
+  color: var(--paragraph);
+  margin-bottom: 1.6rem;
+  font-weight: 400;
 }
