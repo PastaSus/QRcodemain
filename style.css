@@ -1,80 +1,141 @@
-/* 
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-01 typography system(px)::after
-10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
 
-- font-weights
-default: 400
-medium_500
-semi-bold_600
-bold_700
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
 
-- Line heights
-Default: 1
-small:1.05
-medium:1.2
-paragraph defalt: 1.6
-large: 1.8
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
 
--Letter spacing
--0.5px
-0.75px
+/* Set core body defaults */
+body {
+  line-height: 1.5;
+  font-family: Outfit, sans-serif;
+  margin: 0;
+  background-color: var(--background);
+}
 
-spacing system(px)
-2 / 4 / 8 / 12 / 16 / 24 / 32 /48 / 64 / 80 / 96 / 128
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
 
-02 colors
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
 
-primary: #e67e22
-Tints:
-#fdf2e9
-#fae5d3
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
 
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
 
-Shades: 
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
 
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
 
-Accents
-
-Greys:
-#333
-#555
-#888
-#767676 (ligtest gray allowed on #fff)
-#6f6f6f (lightest gray alllowed)
-
-05 shadows
-box-shadow: 0 2.4px 4.8rem rgba(0, 0, 0, 0.075);
-
-06 border-radius
-default:9px
-medium: 11px
-
-07 whitespace
-*/
-
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+/* ------------------------------------Sizing system-------------------------------------------- */
 :root {
   --white: hsl(0, 0%, 100%);
   --background: hsl(212, 45%, 89%);
   --paragraph: hsl(220, 15%, 55%);
   --dark-blue: hsl(218, 44%, 22%);
+
+  /* spacing / typo system */
+
+  /* Typography System */
+  --font-size-4: 0.25rem; /* 4px */
+  --font-size-8: 0.5rem; /* 8px */
+  --font-size-10: 0.625rem; /* 10px */
+  --font-size-12: 0.75rem; /* 12px */
+  --font-size-14: 0.875rem; /* 14px */
+  --font-size-16: 1rem; /* 16px */
+  --font-size-18: 1.125rem; /* 18px */
+  --font-size-20: 1.25rem; /* 20px */
+  --font-size-24: 1.5rem; /* 24px */
+  --font-size-30: 1.875rem; /* 30px */
+  --font-size-36: 2.25rem; /* 36px */
+  --font-size-44: 2.75rem; /* 44px */
+  --font-size-52: 3.25rem; /* 52px */
+  --font-size-62: 3.875rem; /* 62px */
+  --font-size-74: 4.625rem; /* 74px */
+  --font-size-86: 5.375rem; /* 86px */
+  --font-size-98: 6.125rem; /* 98px */
+
+  /* Spacing System */
+  --spacing-2: 0.125rem; /* 2px */
+  --spacing-4: 0.25rem; /* 4px */
+  --spacing-8: 0.5rem; /* 8px */
+  --spacing-12: 0.75rem; /* 12px */
+  --spacing-16: 1rem; /* 16px */
+  --spacing-24: 1.5rem; /* 24px */
+  --spacing-32: 2rem; /* 32px */
+  --spacing-48: 3rem; /* 48px */
+  --spacing-64: 4rem; /* 64px */
+  --spacing-80: 5rem; /* 80px */
+  --spacing-96: 6rem; /* 96px */
+  --spacing-128: 8rem; /* 128px */
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-  font-family: Outfit;
-  background-color: var(--background);
-}
-
-.container {
+main {
   margin: 0 auto;
-  max-width: 120rem;
+
   height: 100vh;
   display: flex;
   align-items: center;
@@ -83,31 +144,35 @@ html {
   /* padding: 1.6rem; */
 }
 
-.content {
-  /* display: flex;
+section.content {
+  display: flex;
   flex-direction: column;
-  align-items: center; */
+
+  max-width: 19rem;
   text-align: center;
   background-color: var(--white);
-  padding: 1.6rem;
+  padding: var(--spacing-16);
   border-radius: 17px;
+}
+
+/* img */
+.qrcode {
+  margin: 0 0 var(--spacing-16) 0;
+  border-radius: 11px;
 }
 
 .main-heading {
   color: var(--dark-blue);
-  margin-bottom: 1.6rem;
+  font-size: var(--font-size-20);
+  margin: 0 0 var(--spacing-16) 0;
   font-weight: 700;
 }
 
-.qrcode {
-  max-width: 27rem;
-  margin-bottom: 1.6rem;
-  border-radius: 11px;
-}
-
 .text {
-  font-size: 1.5rem;
+  font-size: 0.9375rem;
   color: var(--paragraph);
-  margin-bottom: 1.6rem;
+  line-height: 1.2;
+  margin-top: 0;
+  padding: 0 var(--spacing-8) var(--spacing-16) var(--spacing-8);
   font-weight: 400;
 }
